@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <Maintitles/>
     <Createthecert/>
   </div>
 </template>
 
 <script>
+import Maintitles from './components/main-titles.vue'
 import Createthecert from './components/create-the-cert.vue'
 
 export default {
   name: 'app',
   components: {
+    Maintitles,
     Createthecert
   }
 }
