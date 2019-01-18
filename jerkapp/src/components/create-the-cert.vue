@@ -56,6 +56,20 @@
     </span>
   </div>
 </div>
+<!-- ////////////////// -->
+<button type="button" class="button is-medium snipcart-add-item"
+:data-item-id="productid"
+:data-item-name="producttitle"
+:data-item-url="itemurl"
+:data-item-price="itemprice"
+:data-item-description="jerktitle+'<br>'+jerkname+'<br>'+jerkdetails+'<br>Cert Number:'+certnum"
+ >
+  Add to cart
+</button>
+<!-- //////////////////
+
+-->
+<!-- ////////////////// -->
 
   </div>
 </div>
@@ -67,11 +81,15 @@ export default {
   name: 'Createthecert',
  data: function () {
     return {
+      productid:'4',
+      producttitle: 'Hot Certificate',
       jerktitle: 'Certificate of Shittiness',
       jerkname: 'Dick Lavender',
       jerkdetails: 'He is a total loser. We keep trying to fire him.',
       imagelink: 'cert-1.png',
-      certnum: '1'
+      itemprice: '2.00',
+      itemurl:'http://doublemarvellous.com/barry-storage/JerkCert/',
+      certnum: '1',
     }
   },
       methods: {
@@ -146,9 +164,9 @@ left: 0;
 }
 
 .jerkname-a{
-font-family: 'Cinzel Decorative', cursive;
+  font-family: 'Alex Brush', cursive;
 margin-top: 29%;
-font-size: 22px;
+font-size: 30px;
 font-weight: 600;
 position: absolute;
 left: 0;
@@ -156,12 +174,15 @@ left: 0;
 }
 
 .jerkname-details{
-  font-family: 'Alex Brush', cursive;
+    font-family: 'Cinzel Decorative', cursive;
     margin-top: 42%;
-    font-size: 27px;
+    font-size: 19px;
     position: absolute;
     left: 0;
     right: 0;
+    max-width: 60%;
+    margin-left: 20%;
+    line-height: 1em;
 }
 
 /******************/

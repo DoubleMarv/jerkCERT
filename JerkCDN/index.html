@@ -1,0 +1,150 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>JerkCERT.ie</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <!-- ////////////////// -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Cinzel+Decorative|Yesteryear|Lato|Press+Start+2P" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+                <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/jerk.css">
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+<?php include('sections/banner.php');?>
+<section id="app">
+  <div class="container">
+  <div class="columns">
+  <div class="column is-two-thirds is-mobile certback">
+    <div class="thecert" id="maincert" :style="{'background-image': 'url(' + 'img/cert-'+ certnum +'.jpg' + ')'}">
+      <img src="img/cert-1.jpg" id="pushpic" class="hideo"/> 
+        <!-- ////////////////// -->
+        <div class="overcertcontain" id="overcontainer">
+        <div class="innercontainer">
+        <p class="jerkname-title">{{ jerktitle }}</p>
+        <p class="jerkname-a">{{ jerkname }}</p>
+        <p class="jerkname-details">{{ jerkdetails }}</p>
+        </div>
+        </div>
+        <!-- ////////////////// -->
+  </div>
+  </div>
+  <div class="column has-text-left fill-fields">
+
+<div class="field">
+  <label class="label">Choose Cert</label>
+  <div class="control has-icons-left">
+    <input v-model="certnum" type="number" min="1" max="2">
+    <span class="icon is-small is-left">
+      <i class="fas fa-user"></i>
+    </span>
+  </div>
+</div>
+<!-- ////////////////// -->
+<div class="field">
+  <label class="label">Certificate of</label>
+  <div class="control has-icons-left">
+    <input v-model="jerktitle" placeholder="Certificate of Shittiness">
+    <span class="icon is-small is-left">
+      <i class="fas fa-user"></i>
+    </span>
+  </div>
+</div>
+<!-- ////////////////// -->
+<div class="field">
+  <label class="label">Name of Person</label>
+  <div class="control has-icons-left">
+    <input v-model="jerkname" placeholder="Name of Jerk">
+    <span class="icon is-small is-left">
+      <i class="fas fa-user"></i>
+    </span>
+  </div>
+</div>
+<!-- ////////////////// -->
+<div class="field">
+  <label class="label">Details of Shittiness</label>
+  <div class="control has-icons-left">
+    <textarea  v-model="jerkdetails" placeholder="Details of jerk"></textarea>
+    <span class="icon is-small is-left">
+      <i class="fas fa-user"></i>
+    </span>
+  </div>
+</div>
+<!-- ////////////////// -->
+<button type="button" 
+class="button is-medium snipcart-add-item"
+data-item-id="4"
+data-item-name="Hot Certificate"
+data-item-price="15.00"
+data-item-url="http://doublemarvellous.com/barry-storage/JerkCert/"
+data-item-custom1-name="Certificate Title"
+:data-item-custom1-value="jerktitle"
+data-item-custom2-name="Name of Jerk"
+:data-item-custom2-value="jerkname"
+data-item-custom3-name="Detail"
+data-item-custom3-type="textarea"
+:data-item-custom3-value="jerkdetails"
+data-item-custom4-name="Cert Style"
+:data-item-custom4-value="certnum"
+>
+  Add to cart
+</button>
+<!-- //////////////////
+
+-->
+<!-- ////////////////// -->
+
+  </div>
+</div>
+</div>
+
+
+</section>
+<script>
+
+var app = new Vue({
+  el: '#app',
+data: {
+jerktitle: 'Certificate of Shittiness',
+jerkname: 'Dick Lavender',
+jerkdetails: 'He is a total loser. We keep trying to fire him.',
+imagelink: 'cert-1.jpg',
+itemurl:'http://doublemarvellous.com/barry-storage/JerkCert/',
+certnum: '1',
+},
+
+//
+methods: {
+makeheight: function() {
+setTimeout(function(){ 
+var currentHeightElement = document.getElementById('pushpic').offsetHeight;
+document.getElementById('overcontainer').style.height = currentHeightElement;
+}, 400);
+}
+},
+//
+
+created() {
+this.makeheight()
+},
+})
+
+</script>
+
+
+<script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" ></script>
+    </body>
+</html>
